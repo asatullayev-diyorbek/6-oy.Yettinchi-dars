@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">User</th>
+                <th scope="col">email</th>
+                <th scope="col">Manzil</th>
+                <th scope="col">Shahar</th>
+                <th scope="col">Pochta kodi</th>
+                <th scope="col">Davlat</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            {% for customer in customers %}
+            	<tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ customer.user.get_full_name   }}</td>
+                    <td>{{ customer.user.email }}</td>
+                    <td>{{ customer.address }}</td>
+                    <td>{{ customer.city }}</td>
+                    <td>{{ customer.postal_code }}</td>
+                    <td>{{ customer.country }}</td>
+                </tr>
+            {% endfor %}
+        
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nomi</th>
+                <th scope="col">Tavsifi</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            {% for category in categories %}
+            	<tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ category.name }}</td>
+                    <td>{{ category.description }}</td>
+                </tr>
+            {% endfor %}
+        
+        </tbody>
+    </table>
+{% endblock %}

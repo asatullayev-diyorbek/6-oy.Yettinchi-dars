@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Kategoriyasi</th>
+                <th scope="col">Nomi</th>
+                <th scope="col">Tavsifi</th>
+                <th scope="col">Narxi</th>
+                <th scope="col">Rasmi</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            {% for product in products %}
+            	<tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ product.category.name }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>$ {{ product.price }}</td>
+                    <td><img width="50px" height="50px" src="{{ product.image.url }}" alt="image"></td>
+                </tr>
+            {% endfor %}
+        
+        </tbody>
+    </table>
+{% endblock %}
